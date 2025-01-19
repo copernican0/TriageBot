@@ -46,7 +46,7 @@ init_database()
 # Configurazione iniziale
 url = "https://api.groq.com/openai/v1/chat/completions"
 headers = {
-    "Authorization": "Bearer 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",
+    "Authorization": f"Bearer {st.secrets['GROQ_API_KEY']}", # Usa la variabile d'ambiente
     "Content-Type": "application/json"
 }
 model = "llama-3.3-70b-versatile"
