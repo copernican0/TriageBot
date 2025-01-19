@@ -8,11 +8,10 @@ import os
 from urllib.parse import urlparse
 
 # Database configuration
-DATABASE_URL = "postgresql://triagebot_owner:dwN5ALJ7MXWi@ep-weathered-tooth-a5aoa4uf.us-east-2.aws.neon.tech/triagebot?sslmode=require"
 
 def get_db_connection():
     try:
-        conn = psycopg2.connect(DATABASE_URL)
+        return psycopg2.connect(st.secrets["DATABASE_URL"])
         return conn
     except Exception as e:
         st.error(f"Errore di connessione al database: {str(e)}")
